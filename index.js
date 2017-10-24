@@ -109,12 +109,12 @@ module.exports = function() {
           }
 
           var fn = this.file.opts.filename;
-          if (base && fn && fn.substr(0, base.length) === base) {
-            fn = fn.substr(base.length);
+          if (base && fn && fn.split(base).length > 1) {
+            fn = fn.split(base)[1];
           }
 
           translate.comments = {
-            reference: fn + ':' + nodePath.node.loc.start.line
+            reference: fn
           };
 
           var translatorComment = getTranslatorComment(nodePath.node);
