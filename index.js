@@ -114,7 +114,7 @@ module.exports = function() {
           }
 
           translate.comments = {
-            reference: fn
+            reference: fn + ':' + nodePath.node.loc.start.line + ':' + nodePath.node.loc.start.column
           };
 
           var translatorComment = getTranslatorComment(nodePath.node);
